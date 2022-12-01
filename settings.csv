@@ -1,0 +1,2 @@
+Name,Type,Display,DefaultValue,Optional,Popup
+global#CS_api_key,string,API Key,,False,No

@@ -1,0 +1,2 @@
+Owner,Author,Disclaimer,Description,Version,Name,UIName,URL,entityName,oAuthSettingId,transformSettingIDs,seedIDs
+CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Enriches IP addresses with CrowdSec's Intelligence,0.1,crowdsec,CrowdSec IP Enricher,run/crowdsec,maltego.IPv4Address,,global#CS_api_key,demo
