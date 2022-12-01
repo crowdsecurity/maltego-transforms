@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir --upgrade gunicorn gevent
 
 # Copy project files and assign them to www-data
 COPY . .
-RUN chown -R www100.69.196.58-data:www-data /var/www/maltego-trx/
+RUN chown -R www-data:www-data /var/www/maltego-trx/
 
 USER www-data
 
