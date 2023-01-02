@@ -1,2 +1,12 @@
 Owner,Author,Disclaimer,Description,Version,Name,UIName,URL,entityName,oAuthSettingId,transformSettingIDs,seedIDs
-CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Enriches IP addresses with CrowdSec's Intelligence,0.1,crowdsec,CrowdSec IP Enricher,run/crowdsec,maltego.IPv4Address,,global#CS_api_key,demo
+CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Adds AS by leveraging CrowdSec CTI data,0.1,crowdsecas,CrowdSec AS Transform,run/crowdsecas,maltego.IPv4Address,,global#CS_api_key,demo
+CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Adds activity details IP using crowdsec data. ,0.1,crowdsecactivity,CrowdSec Activity Details,run/crowdsecactivity,maltego.IPv4Address,,global#CS_api_key,demo
+CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Attaches CrowdSec CTI API response to IP entity,0.1,crowdsecaddapiresp,CrowdSec IP CTI,run/crowdsecaddapiresp,maltego.IPv4Address,,global#CS_api_key,demo
+CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Adds behaviours by leveraging CrowdSec CTI data,0.1,crowdsecbehaviours,CrowdSec Behaviours Transform,run/crowdsecbehaviours,maltego.IPv4Address,,global#CS_api_key,demo
+CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Adds classification details using crowdsec data. ,0.1,crowdsecclassification,CrowdSec Classifications,run/crowdsecclassification,maltego.IPv4Address,,global#CS_api_key,demo
+CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Adds IP range by leveraging CrowdSec CTI data,0.1,crowdseciprange,CrowdSec IP range Transform,run/crowdseciprange,maltego.IPv4Address,,global#CS_api_key,demo
+CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Adds location entities by leveraging CrowdSec CTI data,0.1,crowdseclocation,CrowdSec Location Transform,run/crowdseclocation,maltego.IPv4Address,,global#CS_api_key,demo
+CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Reverse DNS by leveraging CrowdSec CTI data,0.1,crowdsecreversedns,CrowdSec Reverse DNS Transform,run/crowdsecreversedns,maltego.IPv4Address,,global#CS_api_key,demo
+CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Creates entites for scenarios triggered by IP using CrowdSec CTI data.,0.1,crowdsecscenarios,CrowdSec scenarios,run/crowdsecscenarios,maltego.IPv4Address,,global#CS_api_key,demo
+CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Splits Attack Entity into scenarios,0.1,crowdsecscores,CrowdSec Attack Detail Split,run/crowdsecscores,maltego.IPv4Address,,global#CS_api_key,demo
+CrowdSec,Shivam Sandbhor <shivam@crowdsec.net>,,Adds activity details IP using crowdsec data. ,0.1,crowdsectargetcountries,CrowdSec Target Countries,run/crowdsectargetcountries,maltego.IPv4Address,,global#CS_api_key,demo

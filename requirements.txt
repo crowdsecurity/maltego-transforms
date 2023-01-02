@@ -1,2 +1,4 @@
 maltego-trx
 requests
+python-dateutil
+pycountry
