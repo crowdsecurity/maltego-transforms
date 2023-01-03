@@ -41,7 +41,7 @@ def cti_expired_ttl(ip_entity: MaltegoEntity, cache_ttl_in_seconds: int):
 
 def enriched_ip_with_cti_resp(request: MaltegoMsg, response):
     ip_entity = clone_ip_entity(request, response)
-    cache_ttl_in_seconds = request.get("CS_api_cache_ttl_in_seconds")
+    cache_ttl_in_seconds = request.TransformSettings.get("CS_api_cache_ttl_in_seconds")
     if cti_resp_present(ip_entity) and not cti_expired_ttl(
         ip_entity, cache_ttl_in_seconds
     ):
