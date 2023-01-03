@@ -30,16 +30,21 @@ def cti_resp_present(ip_entity: MaltegoEntity):
     return getProperty(ip_entity, "crowdsec_cti_resp") is not None
 
 
-def cti_fetched_three_hours_ago(ip_entity: MaltegoEntity):
+def cti_expired_ttl(ip_entity: MaltegoEntity, cache_ttl_in_seconds: int):
+    if not cache_ttl_in_seconds:
+        cache_ttl_in_seconds = 120
     cti_resp = extract_cti_resp_from_ip_ent(ip_entity)
     return datetime.datetime.now() - datetime_parse(
         cti_resp["fetch_ts"]
-    ) > datetime.timedelta(hours=3)
+    ) > datetime.timedelta(seconds=cache_ttl_in_seconds)
 
 
 def enriched_ip_with_cti_resp(request: MaltegoMsg, response):
     ip_entity = clone_ip_entity(request, response)
-    if cti_resp_present(ip_entity) and not cti_fetched_three_hours_ago(ip_entity):
+    cache_ttl_in_seconds = request.get("CS_api_cache_ttl_in_seconds")
+    if cti_resp_present(ip_entity) and not cti_expired_ttl(
+        ip_entity, cache_ttl_in_seconds
+    ):
         return ip_entity
     api_url = f"https://cti.api.crowdsec.net/v2/smoke/{ip_entity.value}"
     api_key = request.TransformSettings.get("CS_api_key")

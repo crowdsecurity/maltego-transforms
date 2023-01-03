@@ -14,7 +14,7 @@ registry.version = "0.1"
 
 # global settings
 # from maltego_trx.template_dir.settings import api_key_setting
-# registry.global_settings = [api_key_setting]
+# registry.global_settings = [api_key_setting, cache_ttl_setting]
 
 # transform suffix to indicate datasource
 # registry.display_name_suffix = " [ACME]"

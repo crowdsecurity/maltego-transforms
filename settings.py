@@ -4,7 +4,15 @@ api_key_setting = TransformSetting(
     name="CS_api_key",
     display_name="API Key",
     setting_type="string",
-    global_setting=True,
+    optional=False,
+)
+
+cache_ttl_setting = TransformSetting(
+    name="CS_api_cache_ttl_in_seconds",
+    display_name="CrowdSec Cache",
+    setting_type="int",
+    optional=True,
+    default_value="120",
 )
 
 language_setting = TransformSetting(
