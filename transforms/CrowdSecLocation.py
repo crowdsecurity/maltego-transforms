@@ -23,6 +23,7 @@ class CrowdSecLocation(DiscoverableTransform):
             ip_ent = enriched_ip_with_cti_resp(request, response)
         except Exception as e:
             response.addUIMessage(str(e))
+            return
 
         cti_resp = extract_cti_resp_from_ip_ent(ip_ent)
         country_name = pycountry.countries.get(
