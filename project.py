@@ -8,7 +8,7 @@ import transforms
 from extensions import registry
 
 register_transform_classes(transforms)
-registry.host_url = "http://3.109.153.106:8080/"
+registry.host_url = "http://my_ip:8080/"
 registry.write_transforms_config()
 registry.write_settings_config()
 registry.write_local_mtz(
