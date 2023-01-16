@@ -36,7 +36,7 @@ def cti_expired_ttl(ip_entity: MaltegoEntity, cache_ttl_in_seconds: int):
     cti_resp = extract_cti_resp_from_ip_ent(ip_entity)
     return datetime.datetime.now() - datetime_parse(
         cti_resp["fetch_ts"]
-    ) > datetime.timedelta(seconds=cache_ttl_in_seconds)
+    ) > datetime.timedelta(seconds=int(cache_ttl_in_seconds))
 
 
 def enriched_ip_with_cti_resp(request: MaltegoMsg, response):
