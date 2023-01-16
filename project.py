@@ -1,3 +1,4 @@
+import os
 import sys
 
 from maltego_trx.handler import handle_run
@@ -8,13 +9,13 @@ import transforms
 from extensions import registry
 
 register_transform_classes(transforms)
-registry.host_url = "http://my_ip:8080/"
+registry.host_url = os.getenv("MALTEGO_HOST_URL", "http://localhost:8080")
 registry.write_transforms_config()
 registry.write_settings_config()
 registry.write_local_mtz(
     mtz_path="./local.mtz",  # path to the local .mtz file
     working_dir=".",
-    command="/Users/shivamsandbhor/work/crowdsec_maltego/venv/bin/python",  # for a venv you might want to use `./venv/bin/python3`
+    command="./venv/bin/python",  # for a venv you might want to use `./venv/bin/python3`
     params="project.py",
     debug=True,
 )

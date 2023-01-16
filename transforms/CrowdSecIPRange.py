@@ -5,8 +5,8 @@ from maltego_trx.maltego import MaltegoMsg
 from maltego_trx.transform import DiscoverableTransform
 
 from extensions import registry
-from transform_sets import CrowdSecSet
 from settings import api_key_setting, cache_ttl_setting
+from transform_sets import CrowdSecSet
 from utils import enriched_ip_with_cti_resp, extract_cti_resp_from_ip_ent
 
 
@@ -18,9 +18,10 @@ def cidr_to_range(cidr):
 @registry.register_transform(
     display_name="CrowdSec IP range Transform",
     input_entity="maltego.IPv4Address",
-    description="Adds IP range by leveraging CrowdSec CTI data",
+    description="Creates an IP range entity for an IP by leveraging CrowdSec CTI data",
     settings=[api_key_setting, cache_ttl_setting],
     transform_set=CrowdSecSet,
+    output_entities=[Netblock],
 )
 class CrowdSecIPRange(DiscoverableTransform):
     @classmethod

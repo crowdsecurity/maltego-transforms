@@ -2,15 +2,15 @@ from maltego_trx.maltego import MaltegoMsg
 from maltego_trx.transform import DiscoverableTransform
 
 from extensions import registry
-from transform_sets import CrowdSecSet
 from settings import api_key_setting, cache_ttl_setting
+from transform_sets import CrowdSecSet
 from utils import enriched_ip_with_cti_resp, extract_cti_resp_from_ip_ent
 
 
 @registry.register_transform(
     display_name="CrowdSec Activity Details",
     input_entity="maltego.IPv4Address",
-    description="Adds activity details IP using crowdsec data. ",
+    description="Adds activity details properties to an IP using crowdsec data.",
     settings=[api_key_setting, cache_ttl_setting],
     transform_set=CrowdSecSet,
 )
