@@ -8,7 +8,7 @@ from utils import enriched_ip_with_cti_resp, extract_cti_resp_from_ip_ent
 
 
 @registry.register_transform(
-    display_name="CrowdSec Behaviours Transform",
+    display_name="CrowdSec Behaviour",
     input_entity="maltego.IPv4Address",
     description="Creates a behaviour entity for an IP by leveraging CrowdSec CTI data",
     settings=[api_key_setting, cache_ttl_setting],

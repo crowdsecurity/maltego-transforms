@@ -8,7 +8,7 @@ from utils import enriched_ip_with_cti_resp, extract_cti_resp_from_ip_ent
 
 
 @registry.register_transform(
-    display_name="CrowdSec scenarios",
+    display_name="CrowdSec Scenario",
     input_entity="maltego.IPv4Address",
     description="Creates entites for scenarios triggered by IP using CrowdSec CTI data.",
     settings=[api_key_setting, cache_ttl_setting],

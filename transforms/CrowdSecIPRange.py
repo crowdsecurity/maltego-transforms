@@ -16,7 +16,7 @@ def cidr_to_range(cidr):
 
 
 @registry.register_transform(
-    display_name="CrowdSec IP range Transform",
+    display_name="CrowdSec IP Range",
     input_entity="maltego.IPv4Address",
     description="Creates an IP range entity for an IP by leveraging CrowdSec CTI data",
     settings=[api_key_setting, cache_ttl_setting],
