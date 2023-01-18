@@ -22,7 +22,7 @@ class CrowdSecTargetCountries(DiscoverableTransform):
         try:
             ip_ent = enriched_ip_with_cti_resp(request, response)
         except Exception as e:
-            response.addUIMessage(str(e))
+            response.addUIMessage(str(e), UIM_FATAL)
             return
         cti_resp = extract_cti_resp_from_ip_ent(ip_ent)
         for target_country, weight in cti_resp["target_countries"].items():

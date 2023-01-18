@@ -1,4 +1,4 @@
-from maltego_trx.maltego import MaltegoMsg
+from maltego_trx.maltego import UIM_FATAL, MaltegoMsg
 from maltego_trx.transform import DiscoverableTransform
 
 from extensions import registry
@@ -21,7 +21,7 @@ class CrowdSecBehaviours(DiscoverableTransform):
         try:
             ip_ent = enriched_ip_with_cti_resp(request, response)
         except Exception as e:
-            response.addUIMessage(str(e))
+            response.addUIMessage(str(e), UIM_FATAL)
             return
 
         cti_resp = extract_cti_resp_from_ip_ent(ip_ent)
