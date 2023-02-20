@@ -46,13 +46,13 @@ def enriched_ip_with_cti_resp(request: MaltegoMsg, response):
         ip_entity, cache_ttl_in_seconds
     ):
         return ip_entity
-    api_url = f"https://cti.api.dev.crowdsec.net/v2/smoke/{ip_entity.value}"
+    api_url = f"https://cti.api.crowdsec.net/v2/smoke/{ip_entity.value}"
     api_key = request.TransformSettings.get("CS_api_key")
     if not api_key:
         raise Exception("Error: CS_api_key is missing")
     crowdsec_cti = requests.get(
         api_url,
-        headers={"x-api-key": api_key},
+        headers={"x-api-key": api_key, "User-Agent": "crowdsec-maltego/v1.0.0",},
     )
     try:
         crowdsec_cti.raise_for_status()
